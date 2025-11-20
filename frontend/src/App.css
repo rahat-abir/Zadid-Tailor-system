@@ -1,0 +1,312 @@
+/* src/App.css - dark mode admin */
+
+body {
+  background-color: #020617;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #f9fafb;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.5fr);
+  gap: 1.75rem;
+}
+
+/* Card styling */
+
+.card {
+  background: radial-gradient(circle at top left, #1e293b, #020617);
+  border-radius: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.card h2 {
+  margin: 0 0 1.25rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* Form */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  gap: 0.35rem;
+  color: #9ca3af;
+}
+
+input,
+select {
+  border-radius: 0.6rem;
+  border: 1px solid #1f2933;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.9rem;
+  background-color: #020617;
+  color: #e5e7eb;
+  outline: none;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease,
+    background-color 0.12s ease, transform 0.06s ease;
+}
+
+input::placeholder {
+  color: #6b7280;
+}
+
+input:focus,
+select:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px #38bdf833;
+  background-color: #020617;
+  transform: translateY(-1px);
+}
+
+/* Primary button */
+
+button {
+  border-radius: 999px;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  color: #0b1120;
+  cursor: pointer;
+  margin-top: 0.2rem;
+  font-weight: 600;
+  align-self: flex-start;
+  box-shadow: 0 18px 45px rgba(56, 189, 248, 0.4);
+  transition: transform 0.08s ease, box-shadow 0.08s ease,
+    filter 0.08s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 24px 60px rgba(56, 189, 248, 0.5);
+  filter: brightness(1.07);
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Error text */
+
+.error {
+  color: #fecaca;
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+/* Table */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  padding: 0.55rem 0.4rem;
+  border-bottom: 1px solid rgba(30, 64, 175, 0.4);
+  text-align: left;
+}
+
+th {
+  font-weight: 600;
+  background: rgba(15, 23, 42, 0.9);
+  color: #cbd5f5;
+}
+
+tbody tr {
+  background-color: rgba(15, 23, 42, 0.6);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+tbody tr:hover {
+  background-color: rgba(30, 64, 175, 0.7);
+}
+
+/* Low stock highlight */
+
+.low-stock {
+  background: linear-gradient(
+    90deg,
+    rgba(239, 68, 68, 0.35),
+    rgba(15, 23, 42, 0.9)
+  ) !important;
+}
+
+.low-stock td {
+  border-bottom-color: rgba(248, 113, 113, 0.7);
+}
+
+/* Small delete button in table */
+
+td button {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #0b1120;
+  box-shadow: none;
+  margin-top: 0;
+}
+
+td button:hover {
+  background: #b91c1c;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .app-container {
+    padding-inline: 1rem;
+  }
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem 0.5rem;
+}
+
+.top-nav-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.top-nav-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-btn {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  color: #020617;
+  border-color: transparent;
+}
+
+/* Dashboard grid */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.dashboard-stat-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.dashboard-kv {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.dashboard-kv span {
+  color: #9ca3af;
+}
+
+.dashboard-kv strong {
+  color: #e5e7eb;
+}
+
+/* little status chips for ticket statuses */
+
+.status-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.chip {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #e5e7eb;
+  background-color: rgba(15, 23, 42, 0.7);
+}
+
+.chip strong {
+  color: #facc15;
+}
+
+/* Responsive dashboard layout */
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
